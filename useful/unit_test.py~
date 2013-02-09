@@ -1,0 +1,18 @@
+import random
+import unittest
+
+class TestStuff(unittest.TestCase):
+
+    def setUp(self):
+        self.seq = list(range(10))
+
+    def choicetest(self):
+        element = random.choice(self.seq)
+        self.assertTrue(element in self.seq)
+        
+    def testchoice2(self):
+        element = 11
+        self.assertFalse(element in self.seq)
+
+if __name__ == '__main__':
+    unittest.main()
