@@ -1,0 +1,58 @@
+import unittest
+from my_date import Date
+
+class TestMyDate(unittest.TestCase):
+    def Test_should_convert_to_Gregorian(self):
+        date = Date(1987, 6, 24)
+        
+        self.assertEqual((1987, 6, 24), date.to_gregorian())
+    
+    def Test_1987_should_not_be_leap_year(self):
+        date = Date(1987, 6, 24)
+        
+        self.assertFalse(date.is_leap_year())
+        
+    def Test_1_should_not_be_leap_year(self):
+        date = Date(1, 6, 24)
+        
+        self.assertFalse(date.is_leap_year())
+        
+    def Test_2_should_not_be_leap_year(self):
+        date = Date(2, 6, 24)
+        
+        self.assertFalse(date.is_leap_year())
+        
+    def Test_3_should_not_be_leap_year(self):
+        date = Date(3, 6, 24)
+        
+        self.assertFalse(date.is_leap_year())
+        
+    def Test_4_should_be_leap_year(self):
+        date = Date(4, 6, 24)
+        
+        self.assertTrue(date.is_leap_year())
+        
+    def Test_100_should_not_be_leap_year(self):
+        date = Date(100, 6, 24)
+        
+        self.assertFalse(date.is_leap_year())
+        
+    def Test_104_should_be_leap_year(self):
+        date = Date(104, 6, 24)
+        
+        self.assertTrue(date.is_leap_year())
+        
+    def Test_2000_should_be_leap_year(self):
+        date = Date(2000, 6, 24)
+        
+        self.assertTrue(date.is_leap_year())
+        
+    def Test_2004_should_be_leap_year(self):
+        date = Date(2004, 6, 24)
+        
+        self.assertTrue(date.is_leap_year())
+        
+    def Test_2008_should_be_leap_year(self):
+        date = Date(2008, 6, 24)
+        
+        self.assertTrue(date.is_leap_year())

@@ -1,0 +1,23 @@
+import unittest
+from my_date import Date
+
+class TestMyDate(unittest.TestCase):
+    def Test_should_not_be_leap_year(self):
+        date = Date(1987, 6, 24)
+        
+        self.assertFalse(date.is_leap_year())
+        
+    def Test_should_be_leap_year(self):
+        date = Date(2000, 6, 24)
+        
+        self.assertTrue(date.is_leap_year())
+        
+    def Test_should_be_leap_year(self):
+        date = Date(2004, 6, 24)
+        
+        self.assertTrue(date.is_leap_year())
+        
+    def Test_should_be_leap_year(self):
+        date = Date(2008, 6, 24)
+        
+        self.assertTrue(date.is_leap_year())

@@ -1,0 +1,8 @@
+import unittest
+from my_date import Date
+
+class TestMyDateTest(unittest.TestCase):
+    def Test_should_not_be_leap_year(self):
+        robin = Date(1987, 6, 24)
+        
+        assert(robin.is_leap_year())

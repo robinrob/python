@@ -1,0 +1,9 @@
+MODULES_MANAGER_V2
+born_before|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/born_before.py
+days_of_week|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/dates/days_of_week.py
+gregorian_date|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/dates/gregorian_date.py
+julian_date|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/dates/julian_date.py
+manual_test|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/dates/manual_test.py
+months|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/dates/months.py
+test_gregorian_date|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/dates/test_gregorian_date.py
+test_julian_date|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/dates/test_julian_date.py

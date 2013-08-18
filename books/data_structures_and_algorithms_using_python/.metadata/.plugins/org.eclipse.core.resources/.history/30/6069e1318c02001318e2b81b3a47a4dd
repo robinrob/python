@@ -1,0 +1,10 @@
+import unittest
+from julian_date import JulianDate
+from gregorian_date import GregorianDate
+
+class TestJulianDate(unittest.TestCase):
+
+    def Test_should_convert_to_gregorian(self):
+        date = JulianDate(2446971)
+        
+        self.assertTrue(GregorianDate(1987, 6, 24) == date.to_gregorian())
