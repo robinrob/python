@@ -1,0 +1,19 @@
+import random
+
+class Generator:
+    MULTIPLIER = 1000
+        
+    def generate(self, length):
+    
+
+
+
+password = ""
+
+
+@staticmethod
+def rand_num():
+    return random.random() * MULTIPLIER
+
+for i in range(0, length):
+    password += rand_num()

@@ -1,0 +1,28 @@
+import sys
+import random
+from generator import Generator
+
+DEFAULT_LENGTH = 10
+
+length = DEFAULT_LENGTH
+if len(sys.argv) >= 2:
+    length = int(sys.argv[1])
+    
+print(Generator().generate(length))
+MULT0IPLIER = 1000
+
+
+
+password = ""
+
+
+@staticmethod
+def rand_num():
+    return random.random() * MULTIPLIER
+
+for i in range(0, length):
+    password += rand_num()
+    
+
+
+

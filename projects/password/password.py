@@ -1,7 +1,14 @@
 import sys
+from generator import Generator
 
-length = ""
-if len(sys.argv) > 0:
-    length = sys.argv[0]
+DEFAULT_LENGTH = 10
 
-print(str(length))
+length = DEFAULT_LENGTH
+if len(sys.argv) >= 2:
+    length = int(sys.argv[1])
+    
+print(Generator().generate(length))
+    
+
+
+

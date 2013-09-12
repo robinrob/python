@@ -1,0 +1,25 @@
+import random
+
+MULTIPLIER = 1000
+
+class Generator:
+    
+    
+    def __init__(self):
+        self.chars = []
+        
+        for i in range(0, 10):
+            self.chars.extend(i)
+    
+        
+    def generate(self, length):
+        password = ""
+    
+        for i in range(0, length):
+            password += str(self.rand_num())
+            
+        return password
+    
+    
+    def rand_num(self, max=9):
+        return (int(random.random() * MULTIPLIER) % max) + 1
