@@ -1,9 +1,0 @@
-import unittest
-from julian_date import JulianDate
-
-class TestJulianDate(unittest.TestCase):
-
-    def Test_should_convert_to_gregorian(self):
-        date = JulianDate(0)
-        
-        self.assertEqual((1970, 1, 1), date.to_gregorian())

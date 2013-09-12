@@ -1,0 +1,23 @@
+from unittest import unittest
+
+from array import Array
+
+class TestCase(unittest.TestCase):
+    
+    def test_should_clear_values_with_0(self):
+        arr = Array(1)
+        
+        arr.clear(0)
+        
+        self.assertEquals(0, arr.get_item(0))
+        
+    def test_should_set_item(self):
+        arr = Array(1)
+        
+        arr[0] = 0
+        
+        self.assertEquals(0, arr[0])
+        
+        
+if __name__ == '__main__':
+    unittest.main()

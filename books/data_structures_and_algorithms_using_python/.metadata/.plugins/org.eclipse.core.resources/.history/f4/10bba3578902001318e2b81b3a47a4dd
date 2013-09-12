@@ -1,3 +1,0 @@
-from julian_date import JulianDate
-
-print(GregorianDate(1987, 6, 24).to_julian())

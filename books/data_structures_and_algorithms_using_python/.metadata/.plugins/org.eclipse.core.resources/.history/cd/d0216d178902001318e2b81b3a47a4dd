@@ -1,3 +1,0 @@
-from julian_date import JulianDate
-
-print(JulianDate(-1).to_gregorian())

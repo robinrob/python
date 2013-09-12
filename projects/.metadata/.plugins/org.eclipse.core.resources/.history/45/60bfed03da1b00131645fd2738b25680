@@ -1,0 +1,4 @@
+
+length = sys.argv[0]
+
+print str(length)
