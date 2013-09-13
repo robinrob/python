@@ -1,0 +1,22 @@
+import random
+
+MULTIPLIER = 1000
+
+class Generator:
+    
+    
+    def __init__(self):
+        pass
+    
+        
+    def generate(self, length):
+        password = ""
+    
+        for i in range(0, length):
+            password += str(self.rand_num())
+            
+        return password
+    
+    
+    def rand_num(self, max):
+        return int(random.random() * MULTIPLIER) % max

@@ -15,16 +15,17 @@
 		<item value="false" key="wholeword"/>
 		<item value="" key="selection"/>
 		<list key="findhistory">
+			<item value="__iter"/>
+			<item value=".length"/>
+			<item value="values"/>
 			<item value="day_of_week_name"/>
 			<item value="day_of"/>
 			<item value="DaysOf"/>
 			<item value="_month"/>
 			<item value="dayofweek"/>
-			<item value="Test_"/>
-			<item value="enu"/>
-			<item value="enu]"/>
 		</list>
 		<list key="replacehistory">
+			<item value="elements"/>
 			<item value="DayOf"/>
 			<item value="test_"/>
 			<item value="Julian"/>

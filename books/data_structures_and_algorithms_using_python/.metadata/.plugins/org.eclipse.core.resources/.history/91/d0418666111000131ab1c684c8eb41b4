@@ -1,0 +1,42 @@
+from ctypes import py_object
+
+class Array:
+    def __init__(self, size):
+        if (size <= 0):
+            raise ArrayInitialisationException()
+        else:
+            self.values = py_object * size
+            
+    
+    def length(self):
+        return len(self.values)
+    
+    
+    def get_item(self, index):
+        return self.values[index]
+    
+    
+    def set_item(self, index, value):
+        self.values[index] = value
+        return self.values
+    
+    
+    def clear(self, value):
+        for i in range(0, self.length() - 1):
+            self.values[i] = value
+            
+            
+    def iterator(self):
+        pass
+    
+    
+    def __str__(self):
+        s = "["
+        for i in range(0, self.length() - 2):
+            s += self.values[i] + " "
+        s += self.values[self.length() - 1]
+        return s
+        
+            
+class ArrayInitialisationException(BaseException):
+    pass

@@ -1,0 +1,13 @@
+import sys
+import random
+
+MULTIPLIER = 1000
+DEFAULT_LENGTH = 10
+
+length = DEFAULT_LENGTH
+if len(sys.argv) >= 2:
+    length = sys.argv[1]
+
+for i in range(1, length):
+    print('hello')
+

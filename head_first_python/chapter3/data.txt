@@ -1,9 +1,0 @@
-Mercury:
-Venus:
-Earth:Moon
-Mars:Phobos,Deimos
-Jupiter:Ganymede,Callisto,Europa,Io
-Saturn:Titan,Enceladus,Hyperion,Mimas
-Uranus:Janus
-Neptune:Triton
-Pluto:Charon,Hydra,Nix
