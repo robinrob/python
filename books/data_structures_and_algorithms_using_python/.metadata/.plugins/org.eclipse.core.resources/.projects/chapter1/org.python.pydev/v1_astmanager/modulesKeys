@@ -1,6 +1,8 @@
 MODULES_MANAGER_V2
 born_before|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/born_before.py
 days_of_week|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/dates/days_of_week.py
+grab_bag.generator|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/grab_bag/generator.py
+grab_bag.grab_bag|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/grab_bag/grab_bag.py
 gregorian_date|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/dates/gregorian_date.py
 julian_date|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/dates/julian_date.py
 manual_test|/Users/msl/Documents/programming/python/books/data_structures_and_algorithms_using_python/chapter1/dates/manual_test.py

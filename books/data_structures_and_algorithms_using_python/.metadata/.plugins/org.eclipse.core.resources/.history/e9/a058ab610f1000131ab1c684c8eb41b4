@@ -1,4 +1,0 @@
-from exception import BaseException
-
-class ArrayInitialisationException(BaseException):
-    pass

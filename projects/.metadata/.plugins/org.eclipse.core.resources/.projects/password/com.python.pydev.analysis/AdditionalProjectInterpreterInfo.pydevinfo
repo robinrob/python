@@ -13,29 +13,22 @@ password|0|/Users/msl/Documents/programming/python/projects/password/password.py
 2=password
 -- END DICTIONARY
 -- START TREE 1
-15
+10
 alp|1|ALPH!11@
-bas|0|
 cap|1|CAPS_ALPH!11@
-cha|0|
 def|1|DEFAULT_LENGTH!19@
 dt|1|dt!11@
-ext|0|
 gen|1|Generator!9@
 len|1|length!19@
 mul|1|MULTIPLIER!11@
 n_s|1|N_SPECIAL_CHARS!11@
-pas|0|
-ran|0|
 see|1|SEED!11@
 spe|1|SPECIAL_CHARS!11@
 -- END TREE
 -- START TREE 2
-6
+4
 __i|1|__init__!3&10@
 cha|1|chars!4&11@
 gen|1|generate!3&10@
-mul|0|
-pas|0|
 ran|3|rand_special!3&10@rand_num!3&10@rand_char!3&10@
 -- END TREE

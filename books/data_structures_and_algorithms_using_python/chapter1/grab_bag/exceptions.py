@@ -1,0 +1,2 @@
+class EmptyBagException(Exception):
+    pass

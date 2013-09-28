@@ -3,43 +3,43 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="263" key="DIALOG_WIDTH"/>
 		<item value="114" key="DIALOG_Y_ORIGIN"/>
-		<item value="399" key="DIALOG_HEIGHT"/>
 		<item value="797" key="DIALOG_X_ORIGIN"/>
+		<item value="399" key="DIALOG_HEIGHT"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="" key="selection"/>
+		<item value="Generator" key="selection"/>
 		<list key="findhistory">
+			<item value="Random"/>
+			<item value="random"/>
+			<item value="generator"/>
 			<item value="__iter"/>
 			<item value=".length"/>
 			<item value="values"/>
 			<item value="day_of_week_name"/>
 			<item value="day_of"/>
-			<item value="DaysOf"/>
-			<item value="_month"/>
-			<item value="dayofweek"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Generator"/>
+			<item value="generator"/>
 			<item value="elements"/>
 			<item value="DayOf"/>
 			<item value="test_"/>
 			<item value="Julian"/>
 			<item value="date.to_julian()"/>
 			<item value="GregorianDate"/>
-			<item value=""/>
-			<item value="JulianDate"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.templates.TemplatePreferencePage$EditTemplateDialog_dialogBounds">
 		<item value="597" key="DIALOG_WIDTH"/>
 		<item value="165" key="DIALOG_Y_ORIGIN"/>
-		<item value="159" key="DIALOG_X_ORIGIN"/>
 		<item value="290" key="DIALOG_HEIGHT"/>
+		<item value="159" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

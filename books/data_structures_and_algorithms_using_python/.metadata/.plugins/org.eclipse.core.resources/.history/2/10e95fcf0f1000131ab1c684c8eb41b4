@@ -1,9 +1,0 @@
-class Array:
-    def __init__(self, size):
-        if (size <= 0):
-            raise ArrayInitialisationException()
-            
-            
-            
-class ArrayInitialisationException(BaseException):
-    pass
