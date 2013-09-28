@@ -1,33 +1,30 @@
 #!/usr/bin/python3
 
 import sys
-from optparse import OptionParser
+import argparse
 
 from csv_sorter import CSVSorter
 
-if len(sys.argv) is 1:
+if len(sys.argv) < 3:
     sys.argv.append('--help')
 
-parser = OptionParser()
-parser.add_option("-f", "--file", dest="file",
-                  help="specify CSV file", metavar="<file>")
-parser.add_option("-c", "--column", dest="column",
-                  help="specify column to sort by", metavar="<column index>")
+parser = argparse.ArgumentParser(description='Sort a CSV file.')
 
-(options, args) = parser.parse_args()
+parser.add_argument('file', metavar='file', type=str,
+                    help='CSV file')
 
+parser.add_argument('column', metavar='column', type=int,
+                    help='sorting column')
 
-def validate_options(the_options):
-    required_options = "--file --column"
+parser.add_argument("--delimiter", "-d", type=str, default=",",
+                    help="field delimiter")
 
-    if the_options.file and the_options.column:
-        return True
-    else:
-        print("Must provide the required options: " + required_options)
-        exit(0)
+parser.add_argument("--reverse", "-r", action="store_true", default=False,
+                    help="reverse sort")
 
-validate_options(options)
+parser.add_argument("--csv", action="store_true", default=None,
+                    help="format output as CSV")
 
-CSVSorter(str(options.file)).by_col(int(options.column)).print_all()
+args = parser.parse_args()
 
-
+CSVSorter(args.file, args.delimiter).sort(sort_col=args.column, reverse=args.reverse).print_all(csv_out=args.csv)
