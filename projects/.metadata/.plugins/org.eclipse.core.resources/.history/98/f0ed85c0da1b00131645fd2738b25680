@@ -1,7 +1,0 @@
-import sys
-
-length = ""
-if len(sys.argv) > 1:
-    length = sys.argv[1]
-
-print(str(length))
