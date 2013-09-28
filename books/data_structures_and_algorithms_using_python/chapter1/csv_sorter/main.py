@@ -5,9 +5,6 @@ import argparse
 
 from csv_sorter import CSVSorter
 
-if len(sys.argv) < 3:
-    sys.argv.append('--help')
-
 parser = argparse.ArgumentParser(description='Sort a CSV file.')
 
 parser.add_argument('file', metavar='file', type=str,
