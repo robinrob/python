@@ -1,5 +1,6 @@
 projects/secret
 **/.metadata
+**/.idea
 parallel-imap-mover
 ses*
 ft_work
