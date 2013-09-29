@@ -1,8 +1,8 @@
 import time
 
-from life_drawer import LifeDrawer
+from drawer import Drawer
 
-class LifeGame:
+class Game:
 
     def __init__(self, life_grid, life_algo):
         self.life_grid = life_grid
@@ -16,8 +16,8 @@ class LifeGame:
 
     def play(self, n_turns, delay):
         for turn in range(0, n_turns):
-            print("turn: " + str(turn), end=" ")
-            LifeDrawer.draw(self.life_grid)
+            print("turn: " + str(turn) + " ", end="")
+            Drawer.draw(self.life_grid)
             if turn < (n_turns - 1):
                 time.sleep(delay)
                 self.life_grid = self.life_algo.play(self.life_grid)
