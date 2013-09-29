@@ -1,8 +1,6 @@
-import sys
 import argparse
 
-import settings as settings
-from arrangement import Arrangement
+import settings
 from grid import Grid
 from algo import Algo
 from game import Game
@@ -26,10 +24,5 @@ args = parser.parse_args();
 grid = Grid(args.width, args.height)
 
 game = Game(grid, Algo)
-
-#config = Arrangement(args.width, args.height).center(settings.CONFIG)
-starting_arrangement = Arrangement(args.width, args.height).line(20)
-
-game.configure(starting_arrangement)
-
+game.configure(settings.STARTING_ARRANGEMENT.arrange(args.width, args.height))
 game.play(args.turns, args.delay)

@@ -1,14 +1,41 @@
 import sys
 import subprocess
-import warnings
+import logging
 
 from fabric.decorators import task
 
+PYTHONBREW_DIR = "~/.pythonbrew"
+
+SRC_DIR = './'
+
+PYTHON_VER = '3.2'
+
+@task
+def install():
+    logging.basicConfig(level=logging.DEBUG)
+    install_python()
+    install_requirements()
+
+
+@task
+def install_python():
+    subprocess.call("pythonbrew install " + PYTHON_VER, shell=True)
+    subprocess.call("pythonbrew install 2.7", shell=True)
+    subprocess.call("pythonbrew use " + PYTHON_VER, shell=True)
+
+
+@task
+def install_requirements():
+    subprocess.call(PYTHONBREW_DIR + "/bin/pip3.2 install -r requirements.txt", shell=True)
+    subprocess.call("pythonbrew use 2.7", shell=True)
+    
+
+@task
+def clean():
+    subprocess.call("find . -name '*.pyc' -delete", shell=True)
+    subprocess.call("find . -name '*~' -delete", shell=True)
+
+
 @task(args='')
 def run(args):
-    #args = ""
-    #for i in range(2, len(sys.argv)):
-    #    args += sys.argv[i] + " "
-
-    subprocess.call("pythonbrew use 3.3.1", shell=True)
-    subprocess.call("pythonbrew py -p 3.3.1 life.py " + args, shell=True)
+    subprocess.call("pythonbrew py -p " + PYTHON_VER + " life.py " + args, shell=True)
