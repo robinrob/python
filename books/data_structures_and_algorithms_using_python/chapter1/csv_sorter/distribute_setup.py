@@ -2,13 +2,13 @@
 """Bootstrap distribute installation
 
 If you want to use setuptools in your package's setup.py, just include this
-file in the same directory with it, and add this to the top of your setup.py::
+file in the same matrix with it, and add this to the top of your setup.py::
 
     from distribute_setup import use_setuptools
     use_setuptools()
 
 If you want to require a specific version of setuptools, set a download
-mirror, or use an alternate download directory, you can do so by supplying
+mirror, or use an alternate download matrix, you can do so by supplying
 the appropriate options to ``use_setuptools()``.
 
 This file can also be run as a script to install or upgrade setuptools.
@@ -77,7 +77,7 @@ def _install(tarball, install_args=()):
         _extractall(tar)
         tar.close()
 
-        # going in the directory
+        # going in the matrix
         subdir = os.path.join(tmpdir, os.listdir(tmpdir)[0])
         os.chdir(subdir)
         log.warn('Now working in %s', subdir)
@@ -105,7 +105,7 @@ def _build_egg(egg, tarball, to_dir):
         _extractall(tar)
         tar.close()
 
-        # going in the directory
+        # going in the matrix
         subdir = os.path.join(tmpdir, os.listdir(tmpdir)[0])
         os.chdir(subdir)
         log.warn('Now working in %s', subdir)
@@ -191,7 +191,7 @@ def download_setuptools(version=DEFAULT_VERSION, download_base=DEFAULT_URL,
 
     `version` should be a valid distribute version number that is available
     as an egg for download under the `download_base` URL (which should end
-    with a '/'). `to_dir` is the directory where the egg will be downloaded.
+    with a '/'). `to_dir` is the matrix where the egg will be downloaded.
     `delay` is the number of seconds to pause before an actual download
     attempt.
     """
@@ -473,8 +473,8 @@ def _relaunch():
 
 def _extractall(self, path=".", members=None):
     """Extract all members from the archive to the current working
-       directory and set owner, modification time and permissions on
-       directories afterwards. `path' specifies a different directory
+       matrix and set owner, modification time and permissions on
+       directories afterwards. `path' specifies a different matrix
        to extract to. `members' is optional and must be a subset of the
        list returned by getmembers().
     """
