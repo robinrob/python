@@ -5,4 +5,3 @@ parallel-imap-mover
 ses*
 **/*.pyc
 **/__pycache__
-work
