@@ -3,6 +3,5 @@ projects/secret
 **/.idea
 parallel-imap-mover
 ses*
-ft_work
 **/*.pyc
 **/__pycache__
