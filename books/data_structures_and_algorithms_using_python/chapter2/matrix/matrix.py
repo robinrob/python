@@ -49,10 +49,10 @@ class Matrix:
 
 
     def set_all(self, scalar):
-        self.all(self.set_item(), scalar)
+        self.on_all(self.set_item(), scalar)
 
 
-    def all(self, f, args=[]):
+    def on_all(self, f, args=[]):
         new_matrix = Matrix(self.num_cols(), self.num_rows())
         for col in range(self.num_cols()):
             for row in range(self.num_rows()):
@@ -62,7 +62,7 @@ class Matrix:
 
 
     def scale_by(self, scalar):
-        self.all(self.scale, [scalar])
+        self.on_all(self.scale, [scalar])
         return self
 
 
