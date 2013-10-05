@@ -5,6 +5,7 @@ class Matrix:
 
     def __init__(self, cols, rows, init_val=1):
         self.matrix = []
+        self.transposed = False
 
         for col in range(cols):
             self.matrix.append([init_val])
@@ -45,18 +46,30 @@ class Matrix:
 
 
     def num_rows(self):
-        return len(self.matrix[0])
+        if not self.transposed:
+            return len(self.matrix[0])
+        else:
+            return len(self.matrix)
+
 
 
     def num_cols(self):
-        return len(self.matrix)
+        if not self.transposed:
+            return len(self.matrix)
+        else:
+            return len(self.matrix[0])
 
 
     def get_item(self, col, row):
-        return self.matrix[col][row]
+        return self.matrix[col][row] if not self.transposed else self.matrix[row][col]
 
 
     def set_item(self, col, row, scalar):
+        if self.transposed:
+            tmp = col
+            col = row
+            row = tmp
+
         self.matrix[col][row] = scalar
 
 
@@ -65,12 +78,12 @@ class Matrix:
 
 
     def all(self, f, args=[]):
-        new_matrix = copy.copy((self.matrix))
+        new_matrix = Matrix(self.num_cols(), self.num_rows())
         for col in range(self.num_cols()):
             for row in range(self.num_rows()):
-                new_matrix[col][row] = (f(self.matrix[col][row], args))
+                new_matrix.set_item(col, row, f(self.get_item(col, row), args))
 
-        self.matrix = new_matrix
+        self.matrix = new_matrix.matrix
 
 
     def scale_by(self, scalar):
@@ -84,13 +97,7 @@ class Matrix:
 
 
     def transpose(self):
-        new_matrix = Matrix(self.num_rows(), self.num_cols())
-
-        for col in range(self.num_cols()):
-            for row in range(self.num_rows()):
-                new_matrix.set_item(row, col, self.get_item(col, row))
-
-        self.matrix = new_matrix.matrix
+        self.transposed = not self.transposed
 
 
     def add(self, other_matrix):
