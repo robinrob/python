@@ -62,7 +62,6 @@ def commit(message="Auto-update."):
     subprocess.call("git add README.md", shell=True)
     subprocess.call("git add requirements.txt", shell=True)
     subprocess.call("git commit -m '" + message + "'", shell=True)
-    subprocess.call("git push origin develop", shell=True)
 
 
 @task
