@@ -73,14 +73,19 @@ def commit(message="Auto-update."):
 
 @task
 def push(branch="master"):
-    commit()
-    pull(branch)
     subprocess.call("git push origin " + branch, shell=True)
     
     
 @task
 def pull(branch="master"):
     subprocess.call("git pull origin " + branch, shell=True)
+
+
+@task
+def deploy(branch="master"):
+    commit()
+    pull()
+    push()
 
 
 @task
