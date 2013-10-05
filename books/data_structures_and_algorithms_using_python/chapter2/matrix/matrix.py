@@ -121,3 +121,7 @@ class Matrix:
             s += str(element) + ' '
 
         return s
+
+
+    def print_element(self, element):
+        print(str(element) + ' ')
