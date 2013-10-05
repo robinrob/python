@@ -1,33 +1,42 @@
 import subprocess
 import logging
+import os
 
 from fabric.decorators import task
 
+# Configurable parameters
 PYTHONBREW_DIR = "~/.pythonbrew"
-PYTHON_APP = "python_app.py"
 
 SRC_DIR = './'
 
-PYTHON_VER = '3.2'
+PYTHON3 = '3.2'
+
+# Do not change this - used in initial installation
+PYTHON_APP = "python_app.py"
 
 @task
 def install():
+    if os.path.exists(PYTHON_APP):
+        cwd_name = os.getcwd().split(os.sep)[-1]
+        os.rename(PYTHON_APP, cwd_name + '.py')
+
     logging.basicConfig(level=logging.DEBUG)
     install_python()
     install_requirements()
 
 
-@task
 def install_python():
-    subprocess.call("pythonbrew install 2.7", shell=True)
-    subprocess.call("pythonbrew install " + PYTHON_VER, shell=True)
+    subprocess.call("pythonbrew install " + PYTHON3, shell=True)
 
 
-@task
+def use_python(version):
+    subprocess.call("pythonbrew use " + version, shell=True)
+
+
 def install_requirements():
-    subprocess.call("pythonbrew use " + PYTHON_VER, shell=True)
+    use_python(PYTHON3)
     subprocess.call("pip install -r requirements.txt", shell=True)
-    
+
 
 @task
 def clean():
@@ -37,8 +46,13 @@ def clean():
 
 
 @task
-def run(args):
-    subprocess.call("pythonbrew py -p " + PYTHON_VER + " " + PYTHON_APP + " " + args, shell=True)
+def test():
+    subprocess.call("nosetests", shell=True)
+
+
+@task
+def run(app=PYTHON_APP, args="Hello\!"):
+    subprocess.call("pythonbrew py -p " + PYTHON3 + " " + app + " " + args, shell=True)
 
 
 @task
@@ -59,6 +73,7 @@ def commit(message="Auto-update."):
 
 @task
 def push(branch="master"):
+    commit()
     pull(branch)
     subprocess.call("git push origin " + branch, shell=True)
     
@@ -66,3 +81,8 @@ def push(branch="master"):
 @task
 def pull(branch="master"):
     subprocess.call("git pull origin " + branch, shell=True)
+
+
+@task
+def readme():
+    subprocess.call("less README.md", shell=True)

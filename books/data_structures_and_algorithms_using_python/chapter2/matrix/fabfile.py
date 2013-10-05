@@ -8,7 +8,6 @@ PYTHON_APP = "matrix.py"
 
 SRC_DIR = './'
 
-PYTHON2 = '2.7'
 PYTHON3 = '3.2'
 
 @task
@@ -45,7 +44,7 @@ def test():
 
 @task(args="")
 def run(app=PYTHON_APP, args=""):
-    subprocess.call("pythonbrew py -p " + PYTHON3 + " " + PYTHON_APP + " " + args, shell=True)
+    subprocess.call("pythonbrew py -p " + PYTHON3 + " " + app + " " + args, shell=True)
 
 
 @task
