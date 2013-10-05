@@ -47,7 +47,7 @@ def count():
     subprocess.call("find . -name '*.py' | xargs wc -l", shell=True)
 
 
-@task(message="")
+@task
 def commit(message="Auto-update."):
     clean()
     subprocess.call("git add *.py", shell=True)
@@ -59,4 +59,10 @@ def commit(message="Auto-update."):
 
 @task
 def push(branch="master"):
+    pull(branch)
     subprocess.call("git push origin " + branch, shell=True)
+    
+    
+@task
+def pull(branch="master"):
+    subprocess.call("git pull origin " + branch, shell=True)
