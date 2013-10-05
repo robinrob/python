@@ -4,45 +4,21 @@ import operator
 class Matrix:
 
     def __init__(self, cols, rows, init_val=1):
-        self.matrix = []
+        self.matrix = self.init_matrix(cols, rows, init_val)
         self.transposed = False
 
-        for col in range(cols):
-            self.matrix.append([init_val])
 
-        for col in self.matrix:
+    def init_matrix(self, cols, rows, init_val=1):
+        matrix = []
+
+        for col in range(cols):
+            matrix.append([init_val])
+
+        for col in matrix:
             for row in range(rows - 1):
                 col.append(init_val)
 
-
-    def __iter__(self):
-        self.next_col = 0
-        self.next_row = 0
-
-        return self
-
-
-    def __next__(self):
-        if self.next_row is self.num_rows():
-            raise StopIteration
-
-        val = self.get_item(self.next_col, self.next_row)
-
-        self.next_col += 1
-
-        if self.next_col is self.num_cols():
-            self.next_col = 0
-            self.next_row += 1
-
-        return val
-
-
-    def __str__(self):
-        s = ''
-        for element in self:
-            s += str(element) + ' '
-
-        return s
+        return matrix
 
 
     def num_rows(self):
@@ -50,7 +26,6 @@ class Matrix:
             return len(self.matrix[0])
         else:
             return len(self.matrix)
-
 
 
     def num_cols(self):
@@ -116,3 +91,33 @@ class Matrix:
         for i in range(self.num_cols()):
             for j in range(self.num_rows()):
                 self.set_item(i, j, operation(self.get_item(i, j), other_matrix.get_item(i, j)))
+
+
+    def __iter__(self):
+        self.next_col = 0
+        self.next_row = 0
+
+        return self
+
+
+    def __next__(self):
+        if self.next_row is self.num_rows():
+            raise StopIteration
+
+        val = self.get_item(self.next_col, self.next_row)
+
+        self.next_col += 1
+
+        if self.next_col is self.num_cols():
+            self.next_col = 0
+            self.next_row += 1
+
+        return val
+
+
+    def __str__(self):
+        s = ''
+        for element in self:
+            s += str(element) + ' '
+
+        return s
