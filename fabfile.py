@@ -36,7 +36,7 @@ def clean():
     subprocess.call("find . -name '__pycache__' -delete", shell=True)
 
 
-@task(args="")
+@task
 def run(args):
     subprocess.call("pythonbrew py -p " + PYTHON_VER + " " + PYTHON_APP + " " + args, shell=True)
 
