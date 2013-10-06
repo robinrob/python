@@ -77,8 +77,7 @@ def push(branch="master"):
     
     
 @task
-def pull(branch="master"):
-    subprocess.call("git pull origin " + branch, shell=True)
+def pull(branch="master"):    subprocess.call("git pull origin " + branch, shell=True)
     
     
 @task
@@ -97,6 +96,31 @@ def deploy(message='', branch="master"):
     status()
     pull(branch)
     push(branch)
+    
+    
+@task
+def log():
+    # Git formats
+    git_log_medium_format = "%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%ai (%ar)%C(reset)%n%+B"
+    #git_log_oneline_format = "%C(green)%h%C(reset) %s%C(red)%d%C(reset)%n"
+    #git_log_brief_format = "%C(green)%h%C(reset) %s%n%C(blue)(%ar by %an)%C(red)%d%C(reset)%n"
+
+
+    # Git aliases
+    #gl="git log --topo-order --pretty=format:${_git_log_medium_format}" + wrap_quotes(git_log_medium_format)
+    gls="git log --topo-order --stat --pretty=format:" + wrap_quotes(git_log_medium_format)
+    #gld="git log --topo-order --stat --patch --full-diff --pretty=format:" + wrap_quotes(git_log_medium_format)
+    #glo="git log --topo-order --pretty=format:" + wrap_quotes(git_log_oneline_format)
+    #glg="git log --topo-order --all --graph --pretty=format:" + wrap_quotes(git_log_oneline_format)
+    #glb="git log --topo-order --pretty=format:" + wrap_quotes(git_log_brief_format)
+    #glc="git shortlog --summary --numbered"
+
+
+    subprocess.call(gls, shell=True)
+
+
+def wrap_quotes(s):
+    return "'" + s + "'"
 
 
 @task
