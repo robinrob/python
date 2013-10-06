@@ -1,6 +1,7 @@
 import subprocess
 import logging
 import os
+import shutil
 
 from fabric.decorators import task
 
@@ -19,8 +20,8 @@ def install():
     if os.path.exists(PYTHON_APP):
         cwd_name = os.getcwd().split(os.sep)[-1]
         os.rename(PYTHON_APP, cwd_name + '.py')
+        shutil.rmtree(".git")
 
-    logging.basicConfig(level=logging.DEBUG)
     install_python()
     install_requirements()
 
@@ -63,12 +64,13 @@ def count():
 
 @task
 def commit(message="Auto-update."):
+    logging.basicConfig(level=logging.DEBUG)
     clean()
     subprocess.call("git add *.py", shell=True)
     subprocess.call("git add -u", shell=True)
     subprocess.call("git add README.md --ignore-errors", shell=True)
     subprocess.call("git add requirements.txt --ignore-errors", shell=True)
-    subprocess.call("git commit -m '" + message + "'", shell=True)
+    subprocess.call("git commit -m " + message, shell=True)
     
 
 @task
@@ -91,7 +93,7 @@ def log():
 
 
 @task
-def deploy(message='', branch="master"):
+def deploy(message="Auto-update.", branch="master"):
     commit(message)
     status()
     pull(branch)
