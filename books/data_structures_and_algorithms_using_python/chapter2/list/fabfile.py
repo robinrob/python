@@ -12,17 +12,28 @@ SRC_DIR = './'
 PYTHON3 = '3.2'
 
 # Do not change this - used in initial installation
-PYTHON_APP = "python_app.py"
+DEFAULT_PYTHON_APP = "python_app.py"
 
 @task
 def install():
-    if os.path.exists(PYTHON_APP):
-        cwd_name = os.getcwd().split(os.sep)[-1]
-        os.rename(PYTHON_APP, cwd_name + '.py')
+    if not has_been_installed():
+        os.rename(DEFAULT_PYTHON_APP, app_py())
 
     logging.basicConfig(level=logging.DEBUG)
     install_python()
     install_requirements()
+
+
+def has_been_installed():
+    return os.path.exists(app_py())
+
+
+def app_name():
+    return os.getcwd().split(os.sep)[-1]
+
+
+def app_py():
+    return app_name() + '.py'
 
 
 def install_python():
@@ -51,8 +62,11 @@ def test():
 
 
 @task
-def run(app=PYTHON_APP, args="Hello\!"):
-    subprocess.call("pythonbrew py -p " + PYTHON3 + " " + app + " " + args, shell=True)
+def run(args="\'Hello from " + app_name() + "!\'"):
+    if not has_been_installed():
+        install()
+
+    subprocess.call("pythonbrew py -p " + PYTHON3 + " " + app_py() + " " + args, shell=True)
 
 
 @task

@@ -1,17 +1,14 @@
 from ctypes import py_object
 
 from exceptions import ArrayInitialisationException
-from exceptions import IteratorException
 
 class Array:
-    def __init__(self, size, value=None):
+    def __init__(self, size, value=0):
         if (size <= 0):
             raise ArrayInitialisationException()
         else:            
             self.elements = (py_object * size)()
-             
-            if value is not None:
-                self.clear(value)
+            self.clear(value)
             
     
     def __len__(self):
@@ -32,7 +29,7 @@ class Array:
             self.elements[0] = value
         
         else:
-            for i in range(0, len(self) - 1):
+            for i in range(0, len(self)):
                 self.elements[i] = value
             
             
@@ -46,7 +43,7 @@ class Array:
             self.next += 1
             return self.elements[self.next]
         else:
-            raise IteratorException 
+            raise StopIteration
     
     
     def __str__(self):
