@@ -66,7 +66,7 @@ def count():
 def commit(message="Auto-update."):
     logging.basicConfig(level=logging.DEBUG)
     clean()
-    subprocess.call("git add *.py", shell=True)
+    subprocess.call("git add *", shell=True)
     subprocess.call("git add -u", shell=True)
     subprocess.call("git add README.md --ignore-errors", shell=True)
     subprocess.call("git add requirements.txt --ignore-errors", shell=True)
