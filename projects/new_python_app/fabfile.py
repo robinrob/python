@@ -19,14 +19,12 @@ PYTHON_APP = "python_app.py"
 @task
 def new(destination=""):
     subprocess.call("git clone -b master git@bitbucket.org:robinrob/python_app.git " + destination, shell=True)
-    install(destination)
+    os.chdir(destination)
+    subprocess.call("fab install", shell=True)
 
 
 @task
-def install(destination=None):
-    if destination is not None:
-        os.chdir(destination)
-
+def install():
     if os.path.exists(PYTHON_APP):
         cwd_name = os.getcwd().split(os.sep)[-1]
         os.rename(PYTHON_APP, cwd_name + '.py')
@@ -75,12 +73,10 @@ def count():
 @task
 def commit(message="Auto-update."):
     clean()
-    subprocess.call("git add *", shell=True)
-    subprocess.call("git add .gitignore", shell=True)
+    subprocess.call("git add *.py", shell=True)
     subprocess.call("git add -u", shell=True)
     subprocess.call("git add README.md --ignore-errors", shell=True)
     subprocess.call("git add requirements.txt --ignore-errors", shell=True)
-    status()
     subprocess.call("git commit -m '" + message + "'", shell=True)
     
 
@@ -104,8 +100,9 @@ def log():
 
 
 @task
-def deploy(message="Auto-update", branch="master"):
+def deploy(message='', branch="master"):
     commit(message)
+    status()
     pull(branch)
     push(branch)
     
