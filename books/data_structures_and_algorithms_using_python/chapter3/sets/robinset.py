@@ -14,7 +14,7 @@ class RobinSet:
 
     def add(self, item):
         if item not in self:
-            self.set.add(item)
+            self.set.append(item)
 
 
     def remove(self, item):
