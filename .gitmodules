@@ -1,0 +1,9 @@
+[submodule "projects/python_app"]
+	path = projects/python_app
+	url = git@bitbucket.org:robinrob/python_app
+	ignore = dirty
+
+[submodule "projects/life"]
+	path = projects/life
+	url = git@bitbucket.org:robinrob/life
+	ignore = dirty
