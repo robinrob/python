@@ -35,7 +35,7 @@ class RobinSet:
 
 
     def is_subset_of(self, other):
-        if len(other) > len(self):
+        if len(other) > len(self) and len(self) > 0:
             for item in self:
                 if item not in other:
                     return False
@@ -71,9 +71,22 @@ class RobinSet:
             if item not in other:
                 difference.add(item)
 
+        for item in other:
+            if item not in self:
+                difference.add(item)
+
         return difference
 
 
 
     def __iter__(self):
         return iter(self.set)
+
+
+    def __str__(self):
+        s = ""
+
+        for item in self:
+            s += str(item) + " "
+
+        return s
