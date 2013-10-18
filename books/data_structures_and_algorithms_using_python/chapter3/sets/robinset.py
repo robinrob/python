@@ -1,37 +1,20 @@
 class RobinSet:
 
     def __init__(self):
-        self.set = []
-
-
-    def __len__(self):
-        return len(self.set)
-
-
-    def __contains__(self, item):
-        return item in self.set
+        self._items = []
 
 
     def add(self, item):
         if item not in self:
-            self.set.append(item)
+            self._items.append(item)
 
 
     def remove(self, item):
         try:
-            self.set.remove(item)
+            self._items.remove(item)
 
         except RuntimeError:
             print("Fuck off!")
-
-
-    def __eq__(self, other):
-        if len(other) is len(self):
-            for item in self:
-                if item not in other:
-                    return False
-
-            return True
 
 
     def is_subset_of(self, other):
@@ -78,9 +61,25 @@ class RobinSet:
         return difference
 
 
+    def __len__(self):
+        return len(self._items)
+
+
+    def __contains__(self, item):
+        return item in self._items
+
+
+    def __eq__(self, other):
+        if len(other) is len(self):
+            for item in self:
+                if item not in other:
+                    return False
+
+            return True
+
 
     def __iter__(self):
-        return iter(self.set)
+        return iter(self._items)
 
 
     def __str__(self):
