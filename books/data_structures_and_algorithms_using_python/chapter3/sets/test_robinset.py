@@ -4,6 +4,12 @@ from robinset import RobinSet
 
 class TestRobinSet(unittest.TestCase):
 
+    def test_new_set_should_be_empty(self):
+        set = RobinSet()
+
+        self.assertEquals(0, len(set))
+
+
     def test_should_add_item_when_empty(self):
         set = RobinSet()
         value = 0
@@ -164,3 +170,132 @@ class TestRobinSet(unittest.TestCase):
 
         self.assertTrue(0 in union)
         self.assertTrue(1 in union)
+
+
+    def test_should_return_empty_set_for_intersect_of_empty_sets(self):
+        set = RobinSet()
+        other_set = RobinSet()
+
+        intersect = set.intersect(other_set)
+
+        self.assertEquals(RobinSet(), intersect)
+
+
+    def test_should_return_empty_set_for_intersect_with_empty_set(self):
+        set = RobinSet()
+        set.add(0)
+        other_set = RobinSet()
+
+        intersect = set.intersect(other_set)
+
+        self.assertEquals(RobinSet(), intersect)
+
+
+    def test_should_return_empty_set_for_intersect_on_empty_set(self):
+        set = RobinSet()
+        other_set = RobinSet()
+        other_set.add(0)
+
+        intersect = set.intersect(other_set)
+
+        self.assertEquals(RobinSet(), intersect)
+
+
+    def test_should_return_set_for_intersect_on_equal_sets(self):
+        set = RobinSet()
+        set.add(0)
+        other_set = RobinSet()
+        other_set.add(0)
+
+        intersect = set.intersect(other_set)
+
+        self.assertEquals(set, intersect)
+
+
+    def test_should_return_set_for_intersect_on_equal_sets(self):
+        set = RobinSet()
+        set.add(0)
+        other_set = RobinSet()
+        other_set.add(0)
+
+        intersect = set.intersect(other_set)
+
+        self.assertEquals(set, intersect)
+
+
+    def test_should_common_items_for_intersect_on_sets(self):
+        set = RobinSet()
+        for i in range(0, 10):
+            set.add(i)
+
+        other_set = RobinSet()
+        for i in range(5, 15):
+            other_set.add(i)
+
+        expected = RobinSet()
+        for i in range(5, 10):
+            expected.add(i)
+
+        intersect = set.intersect(other_set)
+
+        self.assertEquals(expected, intersect)
+
+
+    def test_should_return_empty_set_for_difference_of_two_empty_sets(self):
+        set = RobinSet()
+        other_set = RobinSet()
+
+        difference = set.difference(other_set)
+
+        self.assertEquals(RobinSet(), difference)
+
+
+    def test_should_return_set_for_difference_with_empty_set(self):
+        set = RobinSet()
+        set.add(0)
+        other_set = RobinSet()
+
+        difference = set.difference(other_set)
+
+        self.assertEquals(set, difference)
+
+
+    def test_should_return_other_set_for_difference_on_empty_set(self):
+        set = RobinSet()
+        other_set = RobinSet()
+        other_set.add(0)
+
+        difference = set.difference(other_set)
+
+        self.assertEquals(other_set, difference)
+
+
+    def test_should_return_empty_set_for_difference_between_equal_sets(self):
+        set = RobinSet()
+        set.add(0)
+        other_set = RobinSet()
+        other_set.add(0)
+
+        difference = set.difference(other_set)
+
+        self.assertEquals(RobinSet(), difference)
+
+
+    def test_should_return_items_unique_to_both_sets(self):
+        set = RobinSet()
+        for i in range(0, 10):
+            set.add(i)
+
+        other_set = RobinSet()
+        for i in range(5, 15):
+            other_set.add(i)
+
+        expected = RobinSet()
+        for i in range(0, 5):
+            expected.add(i)
+        for i in range(10, 15):
+            expected.add(i)
+
+        difference = set.difference(other_set)
+
+        self.assertEquals(expected, difference)
