@@ -10,11 +10,7 @@ class RobinSet:
 
 
     def remove(self, item):
-        try:
-            self._items.remove(item)
-
-        except RuntimeError:
-            print("Fuck off!")
+        self._items.remove(item)
 
 
     def is_subset_of(self, other):
@@ -28,6 +24,7 @@ class RobinSet:
 
     def union(self, other):
         union = RobinSet()
+
         for item in self:
             union.add(item)
 
@@ -40,6 +37,7 @@ class RobinSet:
 
     def intersect(self, other):
         intersect = RobinSet()
+
         for item in self:
             if item in other:
                 intersect.add(item)
@@ -50,6 +48,7 @@ class RobinSet:
 
     def difference(self, other):
         difference = RobinSet()
+
         for item in self:
             if item not in other:
                 difference.add(item)

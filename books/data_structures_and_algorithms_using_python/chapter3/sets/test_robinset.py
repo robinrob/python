@@ -29,6 +29,12 @@ class TestRobinSet(unittest.TestCase):
         self.assertTrue(1, len(set))
 
 
+    def test_should_throw_value_error_when_removing_item_from_empty_set(self):
+        set = RobinSet()
+
+        self.assertRaises(ValueError, set.remove, 0)
+
+
     def test_should_remove_item(self):
         set = RobinSet()
         value = 0
