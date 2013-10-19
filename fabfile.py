@@ -13,7 +13,7 @@ SRC_DIR = './'
 PYTHON3 = '3.2'
 
 # Do not change this - used in initial installation
-PYTHON_APP = "python_app.py"
+PYTHON_APP = "pyapp.py"
 
 
 @task

@@ -12,7 +12,7 @@ SRC_DIR = './'
 PYTHON3 = '3.2'
 
 # Do not change this - used in initial installation
-DEFAULT_PYTHON_APP = "python_app.py"
+DEFAULT_PYTHON_APP = "pyapp.py"
 
 @task
 def install():

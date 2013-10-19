@@ -30,7 +30,7 @@ def install(destination=None):
     if os.path.exists(PYTHON_APP):
         cwd_name = os.getcwd().split(os.sep)[-1]
         os.rename(PYTHON_APP, cwd_name + '.py')
-        os.rename("test_" % PYTHON_APP, cwd_name + '.py')
+        os.rename("test_" + PYTHON_APP, cwd_name + '.py')
         shutil.rmtree(".git")
 
     install_python()
