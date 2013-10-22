@@ -1,6 +1,17 @@
-import unittest
+#!/usr/bin/env python3
 
-class TestPythonApp(unittest.TestCase):
+import argparse
+import subprocess
+import os
 
-    def test_should(self):
-        self.assertTrue(True)
+import termcolor
+
+parser = argparse.ArgumentParser(description='Create new Python app')
+
+parser.add_argument('destination', metavar='dest', type=str,
+                    help='destination of new Python app')
+
+args = parser.parse_args();
+
+print(termcolor.colored("Creating new Python app at: " + args.destination, "green"))
+subprocess.call("fab new:destination=" + args.destination, shell=True)

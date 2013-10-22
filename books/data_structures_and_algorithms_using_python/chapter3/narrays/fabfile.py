@@ -23,13 +23,18 @@ def install(destination=None):
         os.chdir(destination)
 
     if os.path.exists(PYAPP):
-        cwd_name = os.getcwd().split(os.sep)[-1]
-        os.rename(PYAPP, cwd_name + '.py')
-        os.rename("test_" + PYAPP, "test_" + cwd_name + '.py')
+        os.rename(PYAPP, new_app_name())
+        os.rename("test_" + PYAPP, "test_" + cwd_name())
         shutil.rmtree(".git")
 
     install_python()
     install_requirements()
+    
+    
+def new_app_name():
+    cwd_name = os.getcwd().split(os.sep)[-1]
+    name = cwd_name + '.py'
+    return name
 
 
 def install_python():
@@ -58,9 +63,10 @@ def test():
 
 
 @task
-def run(destination):
-    subprocess.call("git clone -b master git@bitbucket.org:robinrob/" + PYAPP_NAME + ".git " + destination, shell=True)
-    install(destination)
+def run(args=""):
+    cmd = "python " + new_app_name() + " " + args
+    print("cmd: " + cmd)
+    # subprocess.call("python " + cwd_name() + " " + args)
 
 
 @task
