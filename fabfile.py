@@ -5,39 +5,17 @@ import shutil
 
 from fabric.decorators import task
 
-# Configurable parameters
-PYTHONBREW_DIR = "~/.pythonbrew"
-
-SRC_DIR = './'
-
-PYTHON3 = '3.2'
-
-# Do not change this - used in initial installation
-PYTHON_APP = "pyapp.py"
-
-
-@task
-def new(destination=""):
-    subprocess.call("git clone -b master git@bitbucket.org:robinrob/python_app.git " + destination, shell=True)
-    install(destination)
+PYTHON = '3.2'
 
 
 @task
 def install(destination=None):
-    if destination is not None:
-        os.chdir(destination)
-
-    if os.path.exists(PYTHON_APP):
-        cwd_name = os.getcwd().split(os.sep)[-1]
-        os.rename(PYTHON_APP, cwd_name + '.py')
-        shutil.rmtree(".git")
-
     install_python()
     install_requirements()
 
 
 def install_python():
-    subprocess.call("pythonbrew install " + PYTHON3, shell=True)
+    subprocess.call("pythonbrew install " + PYTHON, shell=True)
 
 
 def use_python(version):
@@ -45,15 +23,16 @@ def use_python(version):
 
 
 def install_requirements():
-    use_python(PYTHON3)
+    use_python(PYTHON)
     subprocess.call("pip install -r requirements.txt", shell=True)
 
 
 @task
 def clean():
     subprocess.call("find . -name '*.pyc' -delete", shell=True)
-    subprocess.call("find . -name '*~' -delete", shell=True)
     subprocess.call("find . -name '__pycache__' -delete", shell=True)
+    subprocess.call("find . -name '*~' -delete", shell=True)
+    subprocess.call("find . -name '*.orig' -delete", shell=True)
 
 
 @task
@@ -62,8 +41,9 @@ def test():
 
 
 @task
-def run(app=PYTHON_APP, args="Hello\!"):
-    subprocess.call("pythonbrew py -p " + PYTHON3 + " " + app + " " + args, shell=True)
+def run(destination):
+    subprocess.call("git clone -b master git@bitbucket.org:robinrob/" + PYAPP_NAME + ".git " + destination, shell=True)
+    install(destination)
 
 
 @task
@@ -75,14 +55,19 @@ def count():
 @task
 def commit(message="Auto-update."):
     clean()
+    add()
+    status()
+    subprocess.call("git commit -m '" + message + "'", shell=True)
+
+
+@task
+def add():
     subprocess.call("git add .", shell=True)
     subprocess.call("git add .gitignore", shell=True)
     subprocess.call("git add -u", shell=True)
     subprocess.call("git add README.md --ignore-errors", shell=True)
     subprocess.call("git add requirements.txt --ignore-errors", shell=True)
-    status()
-    subprocess.call("git commit -m '" + message + "'", shell=True)
-    
+
 
 @task
 def push(branch="master"):
@@ -104,7 +89,7 @@ def log():
 
 
 @task
-def deploy(message="Auto-update", branch="master"):
+def save(message="Auto-update", branch="master"):
     commit(message)
     pull(branch)
     push(branch)

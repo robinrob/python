@@ -13,8 +13,13 @@ SRC_DIR = './'
 PYTHON3 = '3.2'
 
 # Do not change this - used in initial installation
-PYAPP_NAME = "pyapp"
-PYAPP = PYAPP_NAME + ".py"
+PYTHON_APP = "new_pyapp.py"
+
+
+@task
+def new(destination=""):
+    subprocess.call("git clone -b master git@bitbucket.org:robinrob/python_app.git " + destination, shell=True)
+    install(destination)
 
 
 @task
@@ -22,10 +27,9 @@ def install(destination=None):
     if destination is not None:
         os.chdir(destination)
 
-    if os.path.exists(PYAPP):
+    if os.path.exists(PYTHON_APP):
         cwd_name = os.getcwd().split(os.sep)[-1]
-        os.rename(PYAPP, cwd_name + '.py')
-        os.rename("test_" + PYAPP, "test_" + cwd_name + '.py')
+        os.rename(PYTHON_APP, cwd_name + '.py')
         shutil.rmtree(".git")
 
     install_python()
@@ -58,9 +62,8 @@ def test():
 
 
 @task
-def run(destination):
-    subprocess.call("git clone -b master git@bitbucket.org:robinrob/" + PYAPP_NAME + ".git " + destination, shell=True)
-    install(destination)
+def run(app=PYTHON_APP, args="Hello\!"):
+    subprocess.call("pythonbrew py -p " + PYTHON3 + " " + app + " " + args, shell=True)
 
 
 @task
