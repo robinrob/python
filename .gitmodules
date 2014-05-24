@@ -7,3 +7,6 @@
 	path = projects/life
 	url = git@bitbucket.org:robinrob/life
 	ignore = dirty
+[submodule "robins-rakefile"]
+	path = robins-rakefile
+	url = git@bitbucket.org:robinrob/rakefile.git
