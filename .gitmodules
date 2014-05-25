@@ -5,8 +5,17 @@
 
 [submodule "projects/life"]
 	path = projects/life
-	url = git@bitbucket.org:robinrob/life
+	url = git@bitbucket.org:robinrob/life.git
 	ignore = dirty
 [submodule "robins-rakefile"]
 	path = robins-rakefile
 	url = git@bitbucket.org:robinrob/rakefile.git
+[submodule "projects/fabfile"]
+	path = projects/fabfile
+	url = git@bitbucket.org:robinrob/fabfile.git
+[submodule "projects/csv"]
+	path = projects/csv
+	url = git@bitbucket.org:robinrob/csv.git
+[submodule "projects/pyapp"]
+	path = projects/pyapp
+	url = git@bitbucket.org:robinrob/py-app.git
