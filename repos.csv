@@ -1,4 +1,4 @@
-Repo,URL
+Repo,URL,Branch
 robins-rakefile,git@bitbucket.org:robinrob/rakefile.git,master
 projects/fabfile,git@bitbucket.org:robinrob/fabfile.git,master
 projects/csv,git@bitbucket.org:robinrob/csv.git,master
