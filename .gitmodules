@@ -2,20 +2,25 @@
 	path = projects/python_app
 	url = git@bitbucket.org:robinrob/python_app
 	ignore = dirty
-
+	branch = master
 [submodule "projects/life"]
 	path = projects/life
 	url = git@bitbucket.org:robinrob/life.git
 	ignore = dirty
+	branch = master
 [submodule "robins-rakefile"]
 	path = robins-rakefile
 	url = git@bitbucket.org:robinrob/rakefile.git
+	branch = master
 [submodule "projects/fabfile"]
 	path = projects/fabfile
 	url = git@bitbucket.org:robinrob/fabfile.git
+	branch = master
 [submodule "projects/csv"]
 	path = projects/csv
 	url = git@bitbucket.org:robinrob/csv.git
+	branch = master
 [submodule "projects/pyapp"]
 	path = projects/pyapp
 	url = git@bitbucket.org:robinrob/py-app.git
+	branch = master
