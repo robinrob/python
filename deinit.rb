@@ -10,7 +10,6 @@ def deinit_all()
     
   end
   
-  system("rm .gitmodules")
   system("rm -rf .git/modules/")
   
 end

@@ -1,0 +1,20 @@
+[submodule "robins-rakefile"]
+	path = robins-rakefile
+	url = git@bitbucket.org:robinrob/rakefile.git
+	branch = master
+[submodule "projects/fabfile"]
+	path = projects/fabfile
+	url = git@bitbucket.org:robinrob/fabfile.git
+	branch = master
+[submodule "projects/csv"]
+	path = projects/csv
+	url = git@bitbucket.org:robinrob/csv.git
+	branch = master
+[submodule "projects/life"]
+	path = projects/life
+	url = git@bitbucket.org:robinrob/life.git
+	branch = master
+[submodule "projects/pyapp"]
+	path = projects/pyapp
+	url = git@bitbucket.org:robinrob/py-app.git
+	branch = master
