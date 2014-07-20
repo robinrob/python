@@ -18,3 +18,14 @@
 	path = projects/pyapp
 	url = git@bitbucket.org:robinrob/py-app.git
 	branch = master
+[submodule "submodule"]
+	path = submodule
+	url = git@bitbucket.org:robinrob/submodule.git
+[submodule "projects/fabfile-basic"]
+	path = projects/fabfile-basic
+	url = git@bitbucket.org:robinrob/fabfile-basic.git
+	branch = master
+[submodule "projects/submodule"]
+	path = projects/submodule
+	url = git@bitbucket.org:robinrob/submodule.git
+	branch = master
