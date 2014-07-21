@@ -5,4 +5,3 @@ projects/fabfile-basic,git@bitbucket.org:robinrob/fabfile-basic.git,master
 projects/csv,git@bitbucket.org:robinrob/csv.git,master
 projects/life,git@bitbucket.org:robinrob/life.git,master
 projects/pyapp,git@bitbucket.org:robinrob/py-app.git,master
-projects/submodule,git@bitbucket.org:robinrob/submodule.git,master
