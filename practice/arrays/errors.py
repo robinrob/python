@@ -1,0 +1,2 @@
+class ArrayInitialisationException(BaseException):
+    pass
