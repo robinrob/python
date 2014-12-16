@@ -9,10 +9,6 @@
   path = projects/fabfile
   url = git@github.com:robinrob/fabfile.git
   branch = master
-[submodule "projects/fabfile-basic"]
-  path = projects/fabfile-basic
-  url = git@github.com:robinrob/fabfile-basic.git
-  branch = master
 [submodule "projects/life"]
   path = projects/life
   url = git@github.com:robinrob/life.git
