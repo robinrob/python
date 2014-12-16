@@ -24,3 +24,6 @@
 [submodule "projects/cr-case-email-archiving"]
 	path = projects/cr-case-email-archiving
 	url = git@github.com:robinrob/cr-case-email-archiving.git
+[submodule "rakelib"]
+	path = rakelib
+	url = git@github.com:robinrob/rakelib.git
