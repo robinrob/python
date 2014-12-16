@@ -1,26 +1,26 @@
 [submodule "projects/fabfile"]
 	path = projects/fabfile
-	url = git@bitbucket.org:robinrob/fabfile.git
+	url = git@github.com:robinrob/fabfile.git
 	branch = master
 [submodule "projects/csv"]
 	path = projects/csv
-	url = git@bitbucket.org:robinrob/csv.git
+	url = git@github.com:robinrob/csv.git
 	branch = master
 [submodule "projects/life"]
 	path = projects/life
-	url = git@bitbucket.org:robinrob/life.git
+	url = git@github.com:robinrob/life.git
 	branch = master
 [submodule "projects/pyapp"]
 	path = projects/pyapp
-	url = git@bitbucket.org:robinrob/py-app.git
+	url = git@github.com:robinrob/py-app.git
 	branch = master
 [submodule "projects/fabfile-basic"]
 	path = projects/fabfile-basic
-	url = git@bitbucket.org:robinrob/fabfile-basic.git
+	url = git@github.com:robinrob/fabfile-basic.git
 	branch = master
 [submodule "rake"]
 	path = rake
-	url = git@bitbucket.org:robinrob/rakefile.git
+	url = git@github.com:robinrob/rakefile.git
 [submodule "projects/cr-case-email-archiving"]
 	path = projects/cr-case-email-archiving
-	url = git@bitbucket.org:robinrob/cr-case-email-archiving.git
+	url = git@github.com:robinrob/cr-case-email-archiving.git
