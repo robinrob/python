@@ -1,6 +1,6 @@
 [submodule "projects/cr-case-email-archiving"]
   path = projects/cr-case-email-archiving
-  url = git@github.com:robinrob/cr-case-email-archiving.git
+  url = git@bitbucket.org:robinrob/cr-case-email-archiving.git
 [submodule "projects/csv"]
   path = projects/csv
   url = git@github.com:robinrob/csv.git
