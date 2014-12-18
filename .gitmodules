@@ -13,6 +13,3 @@
   path = projects/life
   url = git@github.com:robinrob/life.git
   branch = master
-[submodule "rakelib"]
-  path = rakelib
-  url = git@github.com:robinrob/rakelib.git
