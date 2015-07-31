@@ -13,3 +13,6 @@
   path = projects/life
   url = git@github.com:robinrob/life.git
   branch = master
+[submodule "projects/recipes-server-flask"]
+  path = projects/recipes-server-flask
+  url = git@github.com:robinrob/recipes-server-flask.git
