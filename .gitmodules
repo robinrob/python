@@ -19,3 +19,9 @@
 [submodule "projects/dicsaurus"]
 	path = projects/dicsaurus
 	url = git@github.com:robinrob/dicsaurus
+[submodule "projects/projects/twigworld-test"]
+	path = projects/projects/twigworld-test
+	url = git@github.com:robinrob/twigworld-test
+[submodule "projects/twigworld-test"]
+	path = projects/twigworld-test
+	url = git@github.com:robinrob/twigworld-test
