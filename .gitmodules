@@ -16,3 +16,12 @@
 [submodule "projects/recipes-server-flask"]
 	path = projects/recipes-server-flask
 	url = git@github.com:robinrob/recipes-server-flask.git
+[submodule "projects/fanduel-test"]
+	path = projects/fanduel-test
+	url = git@bitbucket.org:rsmith-io/fanduel-test.git
+[submodule "projects/dicsaurus"]
+	path = projects/dicsaurus
+	url = git@github.com:robinrob/dicsaurus
+[submodule "projects/web-speed-test"]
+	path = projects/web-speed-test
+	url = git@github.com:robinrob/web-speed-test
