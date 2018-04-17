@@ -5,26 +5,26 @@
   path = projects/csv
   url = git@github.com:robinrob/csv.git
   branch = master
+[submodule "projects/dicsaurus"]
+  path = projects/dicsaurus
+  url = git@github.com:robinrob/dicsaurus
 [submodule "projects/fabfile"]
   path = projects/fabfile
   url = git@github.com:robinrob/fabfile.git
   branch = master
+[submodule "projects/fanduel-test"]
+  path = projects/fanduel-test
+  url = git@bitbucket.org:rsmith-io/fanduel-test.git
 [submodule "projects/life"]
   path = projects/life
   url = git@github.com:robinrob/life.git
   branch = master
 [submodule "projects/recipes-server-flask"]
-	path = projects/recipes-server-flask
-	url = git@github.com:robinrob/recipes-server-flask
-[submodule "projects/fanduel-test"]
-	path = projects/fanduel-test
-	url = git@bitbucket.org:rsmith-io/fanduel-test.git
-[submodule "projects/dicsaurus"]
-	path = projects/dicsaurus
-	url = git@github.com:robinrob/dicsaurus
-[submodule "projects/web-speed-test"]
-	path = projects/web-speed-test
-	url = git@github.com:robinrob/web-speed-test
+  path = projects/recipes-server-flask
+  url = git@github.com:robinrob/recipes-server-flask
 [submodule "projects/twigworld-test"]
-	path = projects/twigworld-test
-	url = git@github.com:robinrob/twigworld-test
+  path = projects/twigworld-test
+  url = git@github.com:robinrob/twigworld-test
+[submodule "projects/web-speed-test"]
+  path = projects/web-speed-test
+  url = git@github.com:robinrob/web-speed-test
