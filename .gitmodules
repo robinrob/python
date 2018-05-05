@@ -22,6 +22,9 @@
 [submodule "projects/projects/twigworld-test"]
   path = projects/projects/twigworld-test
   url = git@github.com:robinrob/twigworld-test
+[submodule "projects/qikserve-test"]
+  path = projects/qikserve-test
+  url = git@bitbucket.org:rsmith-io/qikserve-test
 [submodule "projects/recipes-server-flask"]
   path = projects/recipes-server-flask
   url = git@github.com:robinrob/recipes-server-flask.git
@@ -31,6 +34,3 @@
 [submodule "projects/web-speed-test"]
   path = projects/web-speed-test
   url = git@github.com:robinrob/web-speed-test
-[submodule "projects/qikserve-test"]
-	path = projects/qikserve-test
-	url = git@bitbucket.org:rsmith-io/qikserve-test
