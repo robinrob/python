@@ -25,3 +25,6 @@
 [submodule "projects/twigworld-test"]
 	path = projects/twigworld-test
 	url = git@github.com:robinrob/twigworld-test
+[submodule "projects/qikserve-test"]
+	path = projects/qikserve-test
+	url = git@bitbucket.org:rsmith-io/qikserver-test
