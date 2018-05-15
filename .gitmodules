@@ -37,3 +37,6 @@
 [submodule "projects/basecase-test"]
 	path = projects/basecase-test
 	url = git@bitbucket.org:rsmith-io/basecase-test
+[submodule "projects/cli-tetris"]
+	path = projects/cli-tetris
+	url = git@github.com:robinrob/cli-tetris
