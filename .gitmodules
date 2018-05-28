@@ -1,3 +1,9 @@
+[submodule "projects/basecase-test"]
+  path = projects/basecase-test
+  url = git@bitbucket.org:rsmith-io/basecase-test
+[submodule "projects/cli-tetris"]
+  path = projects/cli-tetris
+  url = git@github.com:robinrob/cli-tetris
 [submodule "projects/cr-case-email-archiving"]
   path = projects/cr-case-email-archiving
   url = git@bitbucket.org:robinrob/cr-case-email-archiving.git
@@ -26,17 +32,11 @@
   path = projects/qikserve-test
   url = git@bitbucket.org:rsmith-io/qikserve-test
 [submodule "projects/recipes-server-flask"]
-	path = projects/recipes-server-flask
-	url = git@github.com:robinrob/recipes-server-flask
+  path = projects/recipes-server-flask
+  url = git@github.com:robinrob/recipes-server-flask
 [submodule "projects/twigworld-test"]
   path = projects/twigworld-test
   url = git@github.com:robinrob/twigworld-test
 [submodule "projects/web-speed-test"]
   path = projects/web-speed-test
   url = git@github.com:robinrob/web-speed-test
-[submodule "projects/basecase-test"]
-	path = projects/basecase-test
-	url = git@bitbucket.org:rsmith-io/basecase-test
-[submodule "projects/cli-tetris"]
-	path = projects/cli-tetris
-	url = git@github.com:robinrob/cli-tetris
