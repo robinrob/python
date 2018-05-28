@@ -28,9 +28,6 @@
   path = projects/life
   url = git@github.com:robinrob/life.git
   branch = master
-[submodule "projects/projects/twigworld-test"]
-  path = projects/projects/twigworld-test
-  url = git@github.com:robinrob/twigworld-test
 [submodule "projects/qikserve-test"]
   path = projects/qikserve-test
   url = git@bitbucket.org:rsmith-io/qikserve-test
