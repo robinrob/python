@@ -21,13 +21,13 @@
 [submodule "projects/fanduel-test"]
   path = projects/fanduel-test
   url = git@bitbucket.org:rsmith-io/fanduel-test.git
+[submodule "projects/immutable"]
+  path = projects/immutable
+  url = git@gist.github.com:0947770700cfe09707917fd677af07ba.git
 [submodule "projects/life"]
   path = projects/life
   url = git@github.com:robinrob/life.git
   branch = master
-[submodule "projects/projects/twigworld-test"]
-  path = projects/projects/twigworld-test
-  url = git@github.com:robinrob/twigworld-test
 [submodule "projects/qikserve-test"]
   path = projects/qikserve-test
   url = git@bitbucket.org:rsmith-io/qikserve-test
