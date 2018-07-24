@@ -6,3 +6,4 @@ ses*
 **/*.pyc
 **/__pycache__
 venv
+.history
