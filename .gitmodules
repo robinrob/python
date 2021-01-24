@@ -41,5 +41,5 @@
   path = projects/web-speed-test
   url = git@github.com:robinrob/web-speed-test
 [submodule "projects/when-medication"]
-	path = projects/when-medication
-	url = git@github.com:robinrob/when-medication.git
+  path = projects/when-medication
+  url = git@github.com:robinrob/when-medication.git
